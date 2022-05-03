@@ -16,7 +16,7 @@ export async function login(email, password) {
     })
     .catch(err => {
       console.warn(err.message)
-      alert('Ocurrió un error en el proceso de registro')
+      return false
     })
 }
 

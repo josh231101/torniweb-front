@@ -1,0 +1,19 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://p2.piqsels.com/preview/63/721/289/metal-tools-mechanical-bolt-thumbnail.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+.login__container {
+    padding: 2rem;
+    min-width: 400px;
+    min-height: 400px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

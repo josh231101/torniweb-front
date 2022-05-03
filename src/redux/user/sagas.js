@@ -2,6 +2,7 @@ import actions from './actions'
 import { all, takeEvery, put, call, select } from 'redux-saga/effects'
 import * as jwt from 'services/jwt'
 import { history } from 'index'
+import { notification } from 'antd'
 
 const mapAuthProviders = {
   jwt: {
@@ -21,11 +22,18 @@ export function* LOGIN({ payload }) {
   })
   const { authProvider: autProviderName } = yield select((state) => state.settings)
   const success = yield call(mapAuthProviders[autProviderName].login, email, password)
-  console.log('success', success)
 
   if (!success) {
-    alert('Error en el login')
+    notification.error({
+      message: 'Failed to login user',
+      description: 'Validate your credentials correctly.'
+    })
+    return
   }
+  notification.success({
+    message: 'Welcome to TorniWeb login',
+    description: 'You have successfully login'
+  })
   yield put({
     type: 'user/SET_STATE',
     payload: {
@@ -40,7 +48,6 @@ export function* LOGIN({ payload }) {
 }
 
 export function* LOAD_CURRENT_ACCOUNT() {
-  console.log('LOADING CURRENT ACCOUNT')
   yield put({
     type: 'user/SET_STATE',
     payload: {
@@ -49,7 +56,6 @@ export function* LOAD_CURRENT_ACCOUNT() {
   })
   const { authProvider } = yield select((state) => state.settings)
   const user = yield call(mapAuthProviders[authProvider || 'jwt'].currentAccount)
-  console.log('user safa info', user)
   if (user) {
     yield put({
       type: 'user/SET_STATE',
@@ -70,6 +76,7 @@ export function* LOGOUT() {
   yield put({
     type: 'user/RESET_STATE',
   })
+  window.location.reload()
 }
 
 export default function* rootSaga() {

@@ -10,6 +10,7 @@ import reducers from './redux/reducers'
 import sagas from './redux/sagas'
 import Router from './router'
 
+import 'antd/dist/antd.css';
 import './index.css'
 
 // middlewared
