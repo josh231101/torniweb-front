@@ -64,7 +64,7 @@ const Layout = ({ user, children, location: { pathname, search } }) => {
 
   return (
     <Fragment>
-      <Helmet titleTemplate="HG Admin | %s" title="TorniWeb" />
+      <Helmet titleTemplate="TorniWeb Admin | %s" title="TorniWeb" />
       {BootstrappedLayout()}
     </Fragment>
   )

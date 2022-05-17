@@ -13,6 +13,29 @@ const routes = [
     Component: lazy(() => import('pages/auth/login')),
     exact: true,
   },
+  // Quotations
+  {
+    path : '/quotations',
+    Component: lazy(() => import('pages/Quotations')),
+    exact: true,
+  },
+  // Users
+  {
+    path : '/users',
+    Component: lazy(() => import('pages/Users')),
+    exact: true,
+  },
+  // Products
+  {
+    path : '/products',
+    Component: lazy(() => import('pages/Products')),
+    exact: true,
+  },
+  {
+    path : '/products/add',
+    Component: lazy(() => import('pages/Products/add')),
+    exact: true,
+  },
   // Other
   {
     path: '/dashboard',

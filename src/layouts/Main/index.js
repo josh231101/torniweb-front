@@ -1,14 +1,16 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { Layout, Menu } from 'antd';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd'
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons'
+import Topbar from 'components/Topbar'
+import './style.css'
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout
 
 function MainLayout({ children }) {
   return (
     <Layout>
-    <Sider
+      {/* <Sider
       breakpoint="lg"
       collapsedWidth="0"
       onBreakpoint={broken => {
@@ -39,9 +41,25 @@ function MainLayout({ children }) {
           { children }
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      <Footer style={{ textAlign: 'center' }}>TorniWeb 2022</Footer>
+    </Layout> */}
+      <Layout>
+        <Layout.Header>
+          <div className="">
+            {/** NAVIGATION */}
+            <Menu />
+          </div>
+          <Topbar />
+        </Layout.Header>
+        <Layout.Content style={{ height: '100%', position: 'relative' }}>
+          <div className="content-layout">
+            <div className="content-layout__frame">
+              {children}
+            </div>
+          </div>
+        </Layout.Content>
+      </Layout>{' '}
     </Layout>
-  </Layout>
   )
 }
 
