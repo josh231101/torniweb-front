@@ -30,7 +30,7 @@ const Login = ({ dispatch }) => {
     <div className="login">
       <section className="login__container">
         <h1>
-          <center>TorniWeb Login</center>
+          <center>TorniWeb</center>
         </h1>
         <Form
           name="basic"
@@ -43,26 +43,26 @@ const Login = ({ dispatch }) => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: 'Please input your username!' }]}
+            rules={[{ required: true, message: 'Porfavor ingresa tu correo!' }]}
           >
             <Input />
           </Form.Item>
 
           <Form.Item
-            label="Password"
+            label="Contraseña"
             name="password"
-            rules={[{ required: true, message: 'Please input your password!' }]}
+            rules={[{ required: true, message: 'Porfavor ingresa tu contraseña' }]}
           >
             <Input.Password />
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-            <Checkbox>Remember me</Checkbox>
+            <Checkbox>Recuérdame</Checkbox>
           </Form.Item>
 
           <Form.Item >
             <Button block type="primary" htmlType="submit">
-              Log In
+              Iniciar sesión
             </Button>
           </Form.Item>
         </Form>

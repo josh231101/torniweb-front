@@ -31,8 +31,8 @@ export function* LOGIN({ payload }) {
     return
   }
   notification.success({
-    message: 'Welcome to TorniWeb login',
-    description: 'You have successfully login'
+    message: 'Bienvenido a TorniWeb',
+    description: 'Haz iniciado sesión exitosamente.'
   })
   yield put({
     type: 'user/SET_STATE',

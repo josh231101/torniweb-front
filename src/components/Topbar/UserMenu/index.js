@@ -15,8 +15,8 @@ const ProfileMenu = ({ dispatch, user, }) => {
   const logout = e => {
     e.preventDefault()
     notification.info({
-      message: 'Successfully logged out',
-      description: 'See you soon'
+      message: 'Sesión terminada',
+      description: 'Hasta pronto'
     })
     dispatch({
       type: 'user/LOGOUT',
@@ -27,13 +27,8 @@ const ProfileMenu = ({ dispatch, user, }) => {
     <Menu selectable={false}>
       <Menu.Item>
         <strong>
-          Hola, {user.name || 'Anonymous'}
+          Hola, {user.first_name || 'Anonymous'}
         </strong>
-        <div>
-          <strong>
-            Role:{' '}
-          </strong>
-        </div>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item>
@@ -53,7 +48,7 @@ const ProfileMenu = ({ dispatch, user, }) => {
       <Menu.Item>
         <a href="#" onClick={logout}>
           <i className="fe fe-log-out mr-2" />
-          Logout
+          Cerrar sesión
         </a>
       </Menu.Item>
     </Menu>
