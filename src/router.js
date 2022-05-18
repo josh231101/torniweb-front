@@ -31,11 +31,6 @@ const routes = [
     Component: lazy(() => import('pages/Products')),
     exact: true,
   },
-  {
-    path : '/products/add',
-    Component: lazy(() => import('pages/Products/add')),
-    exact: true,
-  },
   // Other
   {
     path: '/dashboard',

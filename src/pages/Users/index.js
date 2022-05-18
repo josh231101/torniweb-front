@@ -13,7 +13,7 @@ const UsersPage = () => {
   return (
     <div>
       <h1>Lista de Usuarios</h1>
-      <div className="mb-1">
+      <div className="mb-2">
         <Button type="primary" onClick={() => setIsModalVisible(!isModalVisible)}>
           Agregar nuevo usuario
         </Button>
@@ -23,7 +23,6 @@ const UsersPage = () => {
         centered
         visible={isModalVisible}
         title="Agregar nuevo usuario"
-        visible={isModalVisible}
         footer={null}
         onCancel={()=>setIsModalVisible(false)}
       >

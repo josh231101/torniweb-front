@@ -1,12 +1,13 @@
-import React from 'react'
-
+import Orders from 'components/Orders'
+import React, { useState } from 'react'
 const QuotationsPage = () => {
   return (
     <div>
-      <h1>QuotationsPage</h1>
-      <p>Lista de cotizaciones enviadas</p>
+      <h1>Cotizaciones</h1>
+      <Orders />
     </div>
   )
 }
 
 export default QuotationsPage
+

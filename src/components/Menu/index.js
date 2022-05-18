@@ -7,19 +7,14 @@ const Menu = () => {
     <ul className="topbar__menu">
       <li>
         <Link to="/users">
-        Users
+        Usuarios
         </Link>
       </li>
       <li>
-        <Link to="/products">Products</Link>
+        <Link to="/products">Mercancia</Link>
       </li>
       <li>
-        <Link to="/products/add">
-        Add product
-        </Link>
-      </li>
-      <li>
-        <Link to="/quotations">Quotations</Link>
+        <Link to="/quotations">Cotizaciones</Link>
       </li>
     </ul>
   )

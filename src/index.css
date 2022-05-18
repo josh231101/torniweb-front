@@ -1,6 +1,6 @@
 
 :root {
-  --kit-color-primary: #184a7b;
+  --kit-color-primary: #1C1B47 !important;
   --sm-max-width: 768px;
   --border: #e4e9f0;
 }

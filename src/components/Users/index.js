@@ -37,6 +37,7 @@ const Users = ({ newUserId }) => {
   console.log('users', users)
   return (
     <Table
+      scroll={{ x: 720 }}
       loading={loading}
       columns={columns}
       dataSource={users ?? []}
