@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import './index.css'
 const mapStateToProps = () => ({})
 const Dashboard = () => {
 
   return (
-    <div>
-      <h1>BIENVENIDO A TORNIWEB</h1>
-      <p>Dashboard</p>
+    <div style={{ backgroundImage: 'url("images/dashboard.jpeg")' }} class="dashboard-container">
+      <h1>BIENVENIDO AL ADMIN TORNIWEB</h1>
     </div>
   )
 }

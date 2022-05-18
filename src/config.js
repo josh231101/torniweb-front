@@ -1,5 +1,5 @@
 const config = {
-  homeUrl: 'http://127.0.0.1:3333',
+  homeUrl: 'https://josue.ngrok.io',
   defaultTimezone: 'America/Mexico_City',
   imagesUrl: 'https://torniweb.s3.amazonaws.com/'
 }
