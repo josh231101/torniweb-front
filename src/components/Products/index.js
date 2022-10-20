@@ -1,7 +1,30 @@
 import React from 'react'
-import { Table, Tag } from 'antd'
+import { Table, Tag, Button, message } from 'antd'
 import useFetch from 'hooks/useFetch'
 import config from 'config'
+import apiClient from 'services/axios'
+
+const willDeactivate = (_id) => {
+  console.log(_id, '_id')
+  apiClient
+  .post(`/api/admin/products/deactivate/${_id}`)
+  .then((res) => {
+    window.location.reload()
+  })
+  .catch((err) => {
+    message.error('Error guardando nuevo producto')
+  })
+}
+const willActivate = (_id) => {
+  apiClient
+  .post(`/api/admin/products/activate/${_id}`)
+  .then((res) => {
+    window.location.reload()
+  })
+  .catch((err) => {
+    message.error('Error guardando nuevo producto')
+  })
+}
 
 const Products = ({ newProductId}) => {
   const { response : products, loading, error } = useFetch('/api/admin/products', newProductId)
@@ -40,7 +63,12 @@ const columns = [
     key: 'is_active',
     render: (is_active) => <Tag color={`${is_active ? 'green' : 'red'}`}>{is_active ? 'Activo' : 'Inactivo'}</Tag>,
   },
-  // TODO: Add alt action buttons
+  {
+    title: '',
+    dataIndex: 'is_active',
+    key: 'deactivate',
+    render: (is_active, product) => is_active ? <Button onClick={() => willDeactivate(product._id)}>Deactivate</Button> : <Button onClick={()=> willActivate(product._id)}>Activate</Button>
+  }
 ]
 
 
